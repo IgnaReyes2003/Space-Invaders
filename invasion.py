@@ -7,7 +7,9 @@ def run_game():
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Space Invaders")
 
+    # Establecer el color del fondo.
     bg_color = (230, 230, 230)
+
 
     # Iniciar el bucle principal del juego.
     while True:
@@ -16,6 +18,10 @@ def run_game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+
+        # Volver a dibujar la pantalla durante cada pasada por el bucle.
+        screen.fill(bg_color)  
+
 
         # Hacer visible la pantalla dibujada más reciente.
         pygame.display.flip()
