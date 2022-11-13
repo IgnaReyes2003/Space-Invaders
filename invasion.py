@@ -1,6 +1,7 @@
 import sys
 import pygame
 from config import Config
+from ship import Ship
 
 def run_game():
     # Inicializar el juego, las configuraciones y crear un objeto llamado pantalla.
@@ -9,6 +10,9 @@ def run_game():
     screen = pygame.display.set_mode(
         (ai_config.screen_width, ai_config.screen_height))
     pygame.display.set_caption("Space Invaders")
+
+    # Crea una nave.
+    ship = Ship(screen)
 
     # Establecer el color del fondo.
     bg_color = (230, 230, 230)
@@ -23,7 +27,8 @@ def run_game():
                 sys.exit()
 
         # Volver a dibujar la pantalla durante cada pasada por el bucle.
-        screen.fill(ai_config.bg_color)  
+        screen.fill(ai_config.bg_color)
+        ship.blitme()  
 
 
         # Hacer visible la pantalla dibujada más reciente.
