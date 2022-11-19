@@ -1,7 +1,7 @@
-import sys
 import pygame
 from config import Config
 from ship import Ship
+import funciones_juego as fj
 
 def run_game():
     # Inicializar el juego, las configuraciones y crear un objeto llamado pantalla.
@@ -22,9 +22,7 @@ def run_game():
     while True:
 
         # Responder a la entrada del teclado o del ratón.
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+        fj.verificar_eventos()
 
         # Volver a dibujar la pantalla durante cada pasada por el bucle.
         screen.fill(ai_config.bg_color)
